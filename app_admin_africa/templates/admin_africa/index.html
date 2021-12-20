@@ -1,0 +1,189 @@
+{% extends 'admin_africa/base_admin_africa.html'%} {% block content %}
+<!-- ============================================================== -->
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-7 align-self-center">
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-5 align-self-center">
+                <div class="customize-input float-right">
+                    <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                                <option selected>Aug 19</option>
+                                <option value="1">July 19</option>
+                                <option value="2">Jun 19</option>
+                            </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="p-2 bg-primary text-center">
+                                        <h1 class="font-light text-white">2,064</h1>
+                                        <h6 class="text-white">Total Tickets</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="p-2 bg-cyan text-center">
+                                        <h1 class="font-light text-white">1,738</h1>
+                                        <h6 class="text-white">Responded</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="p-2 bg-success text-center">
+                                        <h1 class="font-light text-white">1100</h1>
+                                        <h6 class="text-white">Resolve</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="p-2 bg-danger text-center">
+                                        <h1 class="font-light text-white">964</h1>
+                                        <h6 class="text-white">Pending</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                        </div>
+                        <h4 class="card-title">Default Ordering</h4>
+                        <h6 class="card-subtitle">With DataTables you can alter the ordering characteristics of the table at initialisation time. Using the<code> order | option</code> order initialisation parameter, you can set the table to display the data in exactly the order
+                            that you want.</h6>
+                        <div class="table-responsive">
+                            <table id="default_order" class="table table-striped table-bordered display no-wrap" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                    {% for st in stu %}
+                                    <tr>
+                                        <td>{{st.id}}</td>
+                                        <td>{{st.name}}</td>
+                                        <td>{{st.email}}</td>
+                                        <td>{{st.course}}</td>
+                                        <td>{{st.course}}</td>
+
+                                        <td>
+                                            <input type="button" value="Edit" class="btn btn-warning btn-sm btn-edit" data-sid="{{st.id}}">
+                                            <input type="button" value="Delete" class="btn btn-danger btn-sm btn-del" data-sid="{{st.id}}">
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    {% endfor %}
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- *************************************************************** -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Product line Chart</h4>
+                        <ul class="list-inline text-right">
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle mr-1 text-info"></i>iPhone</h5>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle mr-1 text-cyan"></i>iPod</h5>
+                            </li>
+                        </ul>
+                        <div id="morris-area-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- column -->
+            <!-- column -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Site visit Chart</h4>
+                        <ul class="list-inline text-right">
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle mr-1 text-info"></i>Site A View</h5>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5><i class="fa fa-circle mr-1 text-cyan"></i>Site B View</h5>
+                            </li>
+                        </ul>
+                        <div id="morris-area-chart2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+
+
+    {% include 'admin_africa/ajax.html' %}
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
+
+{% endblock %}
